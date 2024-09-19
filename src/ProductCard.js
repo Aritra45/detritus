@@ -91,7 +91,7 @@ const ResponsesModal = ({ onClose, interestedUsers }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <b className="close-button" onClick={onClose}>×</b>
+                <b className="close-button2" onClick={onClose}>×</b>
                 <h2>Interested Users</h2>
                 <table>
                     <thead>
