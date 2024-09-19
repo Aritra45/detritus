@@ -167,7 +167,7 @@ textarea {
     /* Close button */
     .close-button1 {
         position: absolute;
-        padding-top: 2%; /* Adjust for smaller screens */
+        padding-top: 10%; /* Adjust for smaller screens */
         right: 10px;
         font-size: 25px; /* Slightly smaller for mobile */
     }
