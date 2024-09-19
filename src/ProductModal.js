@@ -154,7 +154,6 @@ const ProductModal = ({ onClose, fetchProducts, productId = null, existingProduc
     return (
         <div className="modal-overlaymodal">
             <div className="modal-contentmodal">
-                <b className="close-button" onClick={onClose}>×</b>
                 <h2>{productId ? 'Edit Product' : 'Create New Selling Product'}</h2>
 
                 <form onSubmit={handlePublish}> {/* Wrap in form to handle submission */}
@@ -256,6 +255,7 @@ const ProductModal = ({ onClose, fetchProducts, productId = null, existingProduc
 
                     <div className="button-container">
                         <button type="submit" id='pub'>Publish</button>
+                        <button type='button' onClick={onClose}>Cancel</button>
                     </div>
                 </form>
             </div>
