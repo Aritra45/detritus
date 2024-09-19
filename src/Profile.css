@@ -83,9 +83,9 @@ button:hover {
 }
 
 .close-button {
-    position: absolute;
+    position: relative;
     top: 0;
-    right: 10px;
+    left: 100%;
     cursor: pointer;
     font-size: 20px;
 }
@@ -163,7 +163,7 @@ input {
 
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .profile-container{
         margin-top: 20%;
     }
@@ -186,8 +186,7 @@ input {
         margin-left: 0;
     }
     .close-button {
-        margin-left: 45%;
-        margin-top: 0;
+        margin-left: 0;
     }
     #b1 {
         margin-left: 0;
