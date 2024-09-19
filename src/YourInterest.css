@@ -35,10 +35,8 @@ h3 {
     margin: 10px 0;
 }
 .product-action {
-    display: block;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Space between buttons */
-    align-items: stretch; /* Ensure buttons take full width */
+    display: block; /* Ensures buttons stack vertically */
+    margin-top: 10px;
 }
 
 .details-button, .interested-button {
@@ -54,7 +52,6 @@ h3 {
     color: white;
     margin-left: 0;
     width: 100%;
-    margin-bottom: 10px;
     
 }
 
