@@ -104,6 +104,9 @@ h1 {
     padding-top: 12%;
     padding-bottom: 10%;
   }
+  .home-container h2{
+    padding-top: 10%;
+  }
   .product-list {
     grid-template-columns: repeat(1, 1fr); /* 1 product per row on mobile */
   }
