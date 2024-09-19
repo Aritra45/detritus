@@ -40,7 +40,7 @@ const Registration = () => {
 
             // Here you will send the OTP via email using your backend API
             try {
-                await fetch('http://localhost:3000/send-email', {
+                await fetch('https://detritus-1.onrender.com/send-email', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
