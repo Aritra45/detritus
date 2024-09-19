@@ -34,7 +34,12 @@ h3 {
     font-size: 1.2em;
     margin: 10px 0;
 }
-
+.product-action {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    align-items: stretch; /* Ensure buttons take full width */
+}
 
 .details-button, .interested-button {
     padding: 10px 20px;
