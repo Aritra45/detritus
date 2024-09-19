@@ -1,7 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-require('dotenv').config();  // Load environment variables from .env file
 
 const app = express();
 app.use(cors()); // Enable CORS for all routes
@@ -11,8 +10,8 @@ app.use(express.json()); // Middleware to parse JSON request body
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.GMAIL_USER, // Secure Gmail user from .env
-        pass: process.env.GMAIL_PASS, // Secure Gmail password from .env
+        user: process.env.EMAIL_USER, // Use environment variables for security
+        pass: process.env.EMAIL_PASS, // Use environment variables for security
     },
 });
 
@@ -21,7 +20,7 @@ app.post('/send-email', (req, res) => {
     const { email, otp } = req.body;
 
     const mailOptions = {
-        from: process.env.GMAIL_USER,
+        from: process.env.EMAIL_USER,
         to: email,
         subject: 'Verify Your Email Address for Detritus',
         html: `<p>Hi there,</p>
@@ -29,7 +28,7 @@ app.post('/send-email', (req, res) => {
                <p>To complete your registration, please verify your email address by using the following One-Time Password (OTP):</p>
                <p><strong>Your OTP code is: ${otp}</strong></p>
                <p>Please enter this code on the registration page to verify your email. If you did not request this, kindly ignore this message.</p>
-               <p>Best regards,<br>The Detritus Team</p>`
+               <p>Best regards,<br>The Detritus Team</p>`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -42,10 +41,6 @@ app.post('/send-email', (req, res) => {
         }
     });
 });
-// Start the server on port 3000
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
 
-module.exports = app;  // Export the app for serverless functions
+// Export the app to be used as a Vercel serverless function
+module.exports = app;
