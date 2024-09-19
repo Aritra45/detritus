@@ -5,7 +5,6 @@ import { doc, setDoc } from 'firebase/firestore'; // Import Firestore functions
 import countryCodes from './countryCodes'; // Import country codes
 import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
-
 const Registration = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -19,11 +18,10 @@ const Registration = () => {
     const [isVerified, setIsVerified] = useState(false); // Verification status
     const [showModal, setShowModal] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const [isSendingOtp, setIsSendingOtp] = useState(false); // For handling OTP button state
-    const [generatedOtp, setGeneratedOtp] = useState(''); // Store generated OTP
     const navigate = useNavigate();
 
     const auth = getAuth();
+    const [generatedOtp, setGeneratedOtp] = useState('');
 
     // Function to generate OTP
     const generateOtp = () => {
@@ -33,7 +31,6 @@ const Registration = () => {
     // Function to handle sending OTP to email
     const handleSendOtp = async (e) => {
         e.preventDefault();
-        setIsSendingOtp(true);  // Disable button during OTP send
         if (email) {
             const otp = generateOtp(); // Generate OTP
             setGeneratedOtp(otp); // Store the generated OTP
@@ -51,15 +48,13 @@ const Registration = () => {
                         otp: otp,
                     }),
                 });
+                
                 alert('OTP sent to your email!');
             } catch (error) {
                 console.error('Error sending email:', error);
-            } finally {
-                setIsSendingOtp(false);  // Re-enable button
             }
         } else {
             alert('Please enter a valid email.');
-            setIsSendingOtp(false);  // Re-enable button if invalid email
         }
     };
 
@@ -104,6 +99,7 @@ const Registration = () => {
 
             alert('User registered successfully!');
             navigate('/login');
+            // Additional logic (e.g., redirecting the user) can go here
         } catch (error) {
             console.error("Error registering user:", error);
             alert(error.message);
@@ -135,14 +131,7 @@ const Registration = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        <button
-                            type="button"
-                            onClick={handleSendOtp}
-                            className="otp-button"
-                            disabled={isSendingOtp} // Disable button while sending OTP
-                        >
-                            {isSendingOtp ? "Sending..." : "Send OTP"}
-                        </button>
+                        <button type="button" id='otp' onClick={handleSendOtp} className="otp-button">Send OTP</button>
                     </div>
                 </div>
 
@@ -150,7 +139,7 @@ const Registration = () => {
                     <div className="form-group otp-verification">
                         <label htmlFor="otp">Enter OTP</label>
                         <input
-                            id="otp"
+                            id="otpv"
                             type="text"
                             value={enteredOtp}
                             onChange={(e) => setEnteredOtp(e.target.value)}
@@ -160,6 +149,7 @@ const Registration = () => {
                         <button
                             type="button"
                             className="otp-button"
+                            id='otp'
                             onClick={handleVerifyOtp}
                             disabled={isVerified} // Disable button if verified
                         >
@@ -171,45 +161,45 @@ const Registration = () => {
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <div className="password-input" style={{ position: 'relative' }}>
-                        <input
-                            id="password"
-                            type={showPassword ? "text" : "password"}
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
+                    <input
+                        id="password"
+                        type={showPassword ? "text" : "password"}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
                         <i 
                             className={`fa ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
                             onClick={() => setShowPassword(!showPassword)}
-                            aria-label={showPassword ? "Hide password" : "Show password"}
                         ></i>
-                    </div>
+                        </div>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="retypePassword">Retype Password</label>
                     <div className="password-input" style={{ position: 'relative' }}>
-                        <input
-                            id="retypePassword"
-                            type={showPassword ? "text" : "password"}
-                            value={retypePassword}
-                            onChange={(e) => setRetypePassword(e.target.value)}
-                            required
-                        />
-                    </div>
+                    <input
+                        id="retypePassword"
+                        type={showPassword ? "text" : "password"}
+                        value={retypePassword}
+                        onChange={(e) => setRetypePassword(e.target.value)}
+                        required
+                    />
+                        <i 
+                            className={`fa ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} 
+                            onClick={() => setShowPassword(!showPassword)}
+                        ></i>
+                        </div>
                 </div>
 
-                <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
+                <div className="form-group phone-input">
+                    <label htmlFor="phone">Phone</label>
                     <select
                         value={countryCode}
                         onChange={(e) => setCountryCode(e.target.value)}
-                        required
                     >
-                        {countryCodes.map((code) => (
-                            <option key={code.value} value={code.value}>
-                                {code.label} ({code.value})
-                            </option>
+                        {countryCodes.map((country) => (
+                            <option key={country.code} value={country.code}>{country.name} ({country.code})</option>
                         ))}
                     </select>
                     <input
@@ -221,21 +211,45 @@ const Registration = () => {
                     />
                 </div>
 
-                <div className="form-group terms-conditions">
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={termsAccepted}
-                            onChange={(e) => setTermsAccepted(e.target.checked)}
-                        />
-                        I accept the <Link to="/terms">Terms and Conditions</Link>
-                    </label>
+                <div className="checkbox-label">
+                    <input
+                        type="checkbox"
+                        checked={termsAccepted}
+                        onChange={(e) => setTermsAccepted(e.target.checked)}
+                        required
+                    />
+                        <span>
+                        I agree to the{' '}
+                        <a className="terms-button" onClick={() => setShowModal(true)}>
+                            Terms and Conditions
+                        </a>
+                    </span>
                 </div>
 
-                <button type="submit" disabled={!isVerified}>
-                    Register
-                </button>
+                <button type="submit" id='but' className='register-but'>Register</button>
             </form>
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close" onClick={() => setShowModal(false)}>&times;</span>
+                        <h2>Terms and Conditions for Detritus</h2>
+                        <p>1. Introduction: Welcome to Detritus! These terms outline the rules and regulations for using our website.</p>
+                        <p>2. Acceptance of Terms: By accessing this website, we assume you accept these terms. Do not continue to use Detritus if you do not agree to all the terms and conditions stated here.</p>
+                        <p>3. User Accounts: Users must create an account to sell or buy products. Users are responsible for maintaining the confidentiality of their account information.</p>
+                        <p>4. Listing Products: Sellers must ensure that the products listed are accurately described. Detritus reserves the right to remove any listings that violate our policies.</p>
+                        <p>5. Buying Products: Buyers are responsible for reading the full item listing before making a purchase. All sales are final unless otherwise stated by the seller.</p>
+                        <p>6. Payments: Payments are processed through secure third-party payment gateways. Detritus is not responsible for any payment issues.</p>
+                        <p>7. User Conduct: Users must not engage in harmful, fraudulent, or illegal activities. Misuse may result in account suspension or termination.</p>
+                        <p>8. Intellectual Property: All content on Detritus is the property of Detritus or its content suppliers. Users may not use any content without written permission.</p>
+                        <p>9. Limitation of Liability: Detritus is not liable for any damages arising from the use of the website.</p>
+                        <p>10. Changes to Terms: Detritus reserves the right to modify these terms at any time. Users will be notified, and continued use of the site constitutes acceptance.</p>
+                        <p>11. Contact Us: If you have any questions, please contact us at debaritra45@gmail.com.</p>
+                    </div>
+                </div>
+            )}
+            <p>
+                Already have an account? <Link to="/login">Login now</Link>
+            </p>
         </div>
     );
 };
