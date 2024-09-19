@@ -35,7 +35,7 @@ h3 {
     margin: 10px 0;
 }
 .product-action {
-    display: flex;
+    display: block;
     flex-direction: column; /* Stack buttons vertically */
     gap: 10px; /* Space between buttons */
     align-items: stretch; /* Ensure buttons take full width */
