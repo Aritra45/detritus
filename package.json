@@ -24,10 +24,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",    // No need for concurrently on Vercel
+    "start": "react-scripts start",    
     "build": "react-scripts build",
-    "server": "nodemon api/server.js", // Local server script for backend testing
-    "vercel-build": "npm run build",   // Build script for Vercel deployment
+    "server": "nodemon api/server.js", 
+    "vercel-build": "npm run build",   
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
@@ -53,6 +53,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1",
-    "nodemon": "^3.1.4" // Moved nodemon to devDependencies as it's used for local development only
+    "nodemon": "^3.1.4" 
   }
 }
