@@ -40,7 +40,7 @@ const Registration = () => {
 
             // Here you will send the OTP via email using your backend API
             try {
-                await fetch('/send-email', {
+                await fetch('/api/send-email', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
