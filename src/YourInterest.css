@@ -42,7 +42,11 @@ h3 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    display: block; /* This makes each button take up the full width of its container and be placed on a new line */
+    width: fit-content; /* Adjusts the button width to fit its content */
+    margin-bottom: 10px; /* Adds some space between the buttons */
 }
+
 
 .details-button {
     background-color: #007bff;
