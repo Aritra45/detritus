@@ -15,12 +15,13 @@ h2 {
 }
 
 .profile-info {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .profile-details {
-    flex-grow: 1;
     text-align: center;
 }
 
@@ -43,21 +44,17 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: 30%;
+    margin: 0 auto;
+    display: block;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-#b1 {
-    margin-right: 35%;
-    margin-left: 35%;
-}
-
-#b2 {
-    margin-top: 10%;
-    margin-left: 43%;
+#b1, #b2 {
+    margin: 10px auto;
+    width: 100%;
 }
 
 /* Popup styles */
@@ -83,16 +80,16 @@ button:hover {
 }
 
 .close-button {
-    position: relative;
-    top: 0;
-    left: 100%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     font-size: 20px;
 }
 
 input {
     display: block;
-    width: 95%;
+    width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -101,15 +98,13 @@ input {
 
 /* Popup form buttons */
 .form-buttons {
-    position:relative;
-    height: 60px; /* Adjust height as needed */
-    max-width:100%;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Forgot Password button in the bottom left */
 #forgot-password {
-    position: absolute;
-    bottom: .5%;
     background-color: #ff6347;
     padding: 10px 20px;
     color: white;
@@ -117,14 +112,12 @@ input {
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
-    display: flex;
-    margin-left: 2%;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 /* Change Password button in the bottom right */
 #change-password {
-    position:absolute;
-    bottom: .5%;
     background-color: #007bff;
     padding: 10px 20px;
     color: white;
@@ -132,7 +125,6 @@ input {
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
-    margin-left: 0;
     width: 100%;
 }
 
@@ -143,6 +135,7 @@ input {
 #change-password:hover {
     background-color: #0056b3;
 }
+
 .password-input {
     position: relative;
     margin-bottom: 15px;
@@ -157,44 +150,29 @@ input {
     cursor: pointer;
     color: #999;
     transition: none;
-    transform: none;
     background: transparent;
 }
 
-
 /* Mobile styles */
 @media (max-width: 600px) {
-    .profile-container{
+    .profile-container {
         margin-top: 20%;
+        padding: 15px;
     }
     .profile-info {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
-    .form-buttons {
-        height: auto;
-        flex-direction: column;
-        justify-content: center;
+    button {
+        width: 100%;
+        margin: 10px 0;
     }
-
     #forgot-password, #change-password {
-        width: 100%; /* Full width for mobile */
-        margin-bottom: 10px;
-        position: relative;
-        margin-left: 0;
+        width: 100%;
+        margin: 10px 0;
     }
     .close-button {
         margin-left: 0;
-    }
-    #b1 {
-        margin-left: 0;
-        width: 100%;
-    }
-    #b2 {
-        margin-top: 10%;
-        margin-left: 0;
-        width: 100%;
     }
 }
