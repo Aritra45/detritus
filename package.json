@@ -17,7 +17,6 @@
     "express": "^4.21.0",
     "firebase": "^10.13.1",
     "nodemailer": "^6.9.15",
-    "nodemon": "^3.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
@@ -25,8 +24,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"cross-env NODE_ENV=development react-scripts start\" \"nodemon server.js\"",
+    "start": "react-scripts start",    // No need for concurrently on Vercel
     "build": "react-scripts build",
+    "server": "nodemon api/server.js", // Local server script for backend testing
+    "vercel-build": "npm run build",   // Build script for Vercel deployment
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
@@ -51,8 +52,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "concurrently": "^9.0.0",
-    "cross-env": "^7.0.3",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "nodemon": "^3.1.4" // Moved nodemon to devDependencies as it's used for local development only
   }
 }
