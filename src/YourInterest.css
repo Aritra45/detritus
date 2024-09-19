@@ -95,6 +95,7 @@ h3 {
     .product-action {
         flex-direction: column; /* Stack buttons vertically */
         gap: 10px;
+        display:flex;
     }
 
     .details-button, .interested-button {
