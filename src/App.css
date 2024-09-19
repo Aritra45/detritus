@@ -248,7 +248,9 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
 }
-
+.register-but{
+  width: 100%;
+}
 /* Responsive Styles */
 @media (max-width: 600px) {
   .registration-container {
