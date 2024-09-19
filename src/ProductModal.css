@@ -22,9 +22,9 @@
 }
 
 /* Close button */
-.close-button {
+.close-button1 {
     position: absolute;
-    margin-top: 7%;
+    margin-top: 3%;
     right: 20px;
     background: transparent;
     border: none;
@@ -165,10 +165,10 @@ textarea {
     }
 
     /* Close button */
-    .close-button {
+    .close-button1 {
         position: absolute;
-        padding-top: 10%; /* Adjust for smaller screens */
-        right: 100px;
+        padding-top: 2%; /* Adjust for smaller screens */
+        right: 10px;
         font-size: 25px; /* Slightly smaller for mobile */
     }
 
