@@ -1,0 +1,177 @@
+/* Product Card Styling */
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    transition: box-shadow 0.2s;
+    width: 250px;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-info h3 {
+    margin: 14px; /* Add some space between product info and buttons */
+}
+
+.product-actions {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: space-between; /* Space buttons evenly */
+    margin-top: 8px; /* Add some space above buttons */
+}
+
+.edit-button,
+.delete-button,
+.responses-button {
+    color: white;
+    border: none;
+    padding: 6px 10px; /* Add some padding for better touch targets */
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1; /* Allow buttons to grow equally */
+    margin: 0 4px; /* Add margin between buttons */
+    margin-bottom: 0;
+}
+
+.responses-button {
+    background-color: #007bff; /* Blue color for responses button */
+}
+
+.edit-button {
+    background-color: green; /* Green color for edit button */
+}
+
+.delete-button {
+    background-color: red; /* Red color for delete button */
+}
+
+.edit-button:hover {
+    background-color: #0056b3; /* Darker shade for edit button hover */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker shade for delete button hover */
+}
+
+.responses-button:hover {
+    background-color: #0056b3; /* Darker shade for responses button hover */
+}
+
+/* Full-Screen Modal Overlay Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darkened background for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Full-Screen Modal Content Styling */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 0; /* Remove border-radius for a full-screen effect */
+    width: 100%;
+    height: 100%;
+    max-width: none; /* Remove max-width to allow full-screen */
+    max-height: none; /* Remove max-height to allow full-screen */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    box-shadow: none; /* Remove box-shadow for full-screen */
+    position: relative;
+}
+
+/* Close Button Styling */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #c82333; /* Change color on hover */
+}
+
+/* Title Styling */
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Increased font size for better visibility */
+    color: #333;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        height: 95%;
+        padding: 15px;
+    }
+
+    .close-button {
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .close-button {
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

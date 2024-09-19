@@ -1,0 +1,39 @@
+.footer {
+  background-color: #505050;
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  position: fixed; /* Change to fixed */
+  bottom: 0; /* Stick it to the bottom */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-content a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px; /* Add space between elements */
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.footer-content a:hover {
+  color: #76abe3; /* Darker blue on hover */
+  text-decoration: none;
+}
+
+.footer .footer-content p {
+  color: white;
+}

@@ -1,0 +1,99 @@
+/* Full-Screen Modal Overlay Styling */
+.modal-overlayedit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darkened background for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Full-Screen Modal Content Styling */
+.modal-contentedit {
+    background: white;
+    padding: 20px;
+    border-radius: 0; /* Remove border-radius for a full-screen effect */
+    width: 100%;
+    height: 100%;
+    max-width: none; /* Remove max-width to allow full-screen */
+    max-height: none; /* Remove max-height to allow full-screen */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    box-shadow: none; /* Remove box-shadow for full-screen */
+    position: relative;
+}
+
+/* Close Button Styling */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #c82333; /* Change color on hover */
+}
+
+/* Form Styling */
+.modal-contentedit h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Increased font size for better visibility */
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+button:nth-of-type(1) {
+    background-color: green; /* Update button */
+}
+
+button:nth-of-type(2) {
+    background-color: red; /* Cancel button */
+}
+
+button:nth-of-type(1):hover {
+    background-color: #0056b3; /* Darker shade for update button hover */
+}
+
+button:nth-of-type(2):hover {
+    background-color: #c82333; /* Darker shade for cancel button hover */
+}

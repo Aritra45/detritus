@@ -1,0 +1,103 @@
+/* Default Styles */
+.interest-page {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.interest-page h2 {
+    padding-top: 5%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Default for larger screens */
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 2%;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-button, .interested-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.details-button {
+    background-color: #007bff;
+    color: white;
+    margin-left: 0;
+}
+
+.interested-button {
+    background-color: #dc3545;
+    color: white;
+}
+.interested-button:hover{
+    background-color: #ad1928;
+}
+
+/* Mobile view - 480px and below */
+@media (max-width: 480px) {
+    .interest-page {
+        padding: 10px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .product-card {
+        width: 100%; /* Full width card */
+        padding: 10px;
+    }
+
+    .product-image {
+        height: 120px; /* Reduce image height for smaller screens */
+        border-radius: 5px;
+    }
+
+    h3 {
+        font-size: 1em; /* Smaller font size for product name */
+        margin: 8px 0;
+    }
+
+    .product-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .details-button, .interested-button {
+        width: 100%; /* Buttons take full width */
+        padding: 8px 0; /* Smaller padding */
+        font-size: 0.8em;
+    }
+}

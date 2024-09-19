@@ -1,0 +1,358 @@
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f7fa;
+  min-height: 100vh;
+}
+
+.registration-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-top: 2%;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.registration-container .form-group {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+  margin: 10px 0;
+}
+
+.registration-container label {
+  font-weight: 500;
+  color: #666;
+  font-size: 14px;
+  margin-right: 10px; /* Add space between label and input */
+  width: 30%; /* Set a width for labels */
+  text-align: left; /* Ensure label text is left-aligned */
+}
+
+.registration-container input,
+.phone-input select {
+  width: 70%; /* Adjust width of input fields to fit beside labels */
+  padding: 12px; /* Ensure consistent padding */
+  margin-bottom: 10px; /* Adjusted margin for spacing */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.registration-container input:focus,
+.phone-input select:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+}
+
+.phone-input select {
+  width: 30%; /* Adjust width for country code */
+  margin-right: 10px;
+}
+
+#but {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#but:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.otp-verification {
+  margin-top: 15px;
+}
+.otp-verification input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px; /* Rounded corners only on the left */
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.checkbox-label input {
+  margin-right: 5px;
+}
+.checkbox-label span {
+  margin-right: 10%;
+  display: inline-block;
+}
+
+#recaptcha-container {
+  margin-top: 10px;
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px; /* Rounded corners only on the left */
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#otp {
+  padding: 12px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px 6px 6px 6px; /* Rounded corners only on the right */
+  transition: background-color 0.3s ease;
+  margin-left: 1%;
+}
+
+#otp:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Style for the modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 15%;
+  top: 5%;
+  width: 70%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 300px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  margin-top: 15px;
+}
+
+.terms-button {
+  background: none;
+  color: blue;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.terms-button:hover {
+  text-decoration: none;
+}
+
+
+
+p {
+  margin-top: 20px; /* Adds space above the paragraph */
+}
+
+a {
+  color: #007BFF; /* Link color */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none; /* Underline on hover */
+  color: red;
+  transition: 0.3s;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.password-input {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.password-input input {
+  width: 135%;
+  position: relative;
+}
+
+.password-input i {
+  cursor: pointer;
+  font-size: 1.2em;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+
+#name{
+  margin-left: 0;
+}
+#otpv{
+  margin-left:0 ;
+}
+.registration-container .register-but{
+  margin-left: 0;
+  width: 100%;
+}
+.password-input {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.password-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px; /* Rounded corners only on the left */
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.password-input i {
+  right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .registration-container {
+    padding: 20px;
+  }
+
+  .registration-container .form-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .registration-container label {
+    margin-bottom: 5px;
+  }
+
+  .registration-container input,
+  .phone-input select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .phone-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .phone-input select {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
+  #but {
+    width: 100%;
+    margin-left: 0;
+  }
+  .modal{
+    width: 90%;
+    left: 4%;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+  .password-input input {
+    width: 100%;
+  }
+
+  .password-input i {
+    right: 10px;
+  }
+}
+
+

@@ -1,0 +1,110 @@
+/* Navbar Styles */
+.navbar-container {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000000;
+  position: fixed;
+  width: 96.5%;
+  z-index: 1000;
+  top: 0;
+}
+
+.logo img {
+  height: 70px;
+}
+
+/* Menu Icon and Notification for Mobile */
+.menu-notification {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px; /* Space between menu icon and notification icon */
+  display: none; /* Hide by default */
+}
+
+
+/* Navigation Links for Desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-left: 50%;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 17px;
+    background-color: #000000;
+    position: fixed;
+    width: 96.5%;
+    z-index: 1000;
+    top: 0;
+  }
+  /* Show the menu icon in mobile view */
+  .menu-icon {
+      display: block; /* Show menu icon on mobile */
+      margin-right: 20px;
+  }
+
+  /* Hide the navigation links in mobile view */
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      background-color: #000;
+      border-radius: 5px;
+      width: 200px;
+      padding: 10px;
+  }
+
+  .nav-links.open {
+      display: flex; /* Show links when menu is open */
+  }
+
+  .nav-links li {
+      padding: 10px 0;
+      border-bottom: 1px solid white;
+  }
+}
+
+/* Hide menu icon and show nav links in larger screen */
+@media (min-width: 769px) {
+  .menu-icon {
+      display: none; /* Hide menu icon in computer view */
+  }
+
+  .nav-links {
+      display: flex; /* Always show links on larger screens */
+  }
+}
