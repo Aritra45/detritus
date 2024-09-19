@@ -35,10 +35,6 @@ h3 {
     margin: 10px 0;
 }
 
-.product-actions {
-    display: flex;
-    justify-content: space-between;
-}
 
 .details-button, .interested-button {
     padding: 10px 20px;
@@ -52,11 +48,15 @@ h3 {
     background-color: #007bff;
     color: white;
     margin-left: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    
 }
 
 .interested-button {
     background-color: #dc3545;
     color: white;
+    width: 100%;
 }
 .interested-button:hover{
     background-color: #ad1928;
@@ -92,7 +92,7 @@ h3 {
         margin: 8px 0;
     }
 
-    .product-actions {
+    .product-action {
         flex-direction: column; /* Stack buttons vertically */
         gap: 10px;
     }
