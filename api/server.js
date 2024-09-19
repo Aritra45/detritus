@@ -1,6 +1,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+require('dotenv').config();  // Load environment variables from .env file
 
 const app = express();
 app.use(cors()); // Enable CORS for all routes
@@ -10,8 +11,8 @@ app.use(express.json()); // Middleware to parse JSON request body
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'detritus408@gmail.com', 
-        pass: 'pbbs tzir cfso jcsx', 
+        user: process.env.GMAIL_USER, // Secure Gmail user from .env
+        pass: process.env.GMAIL_PASS, // Secure Gmail password from .env
     },
 });
 
@@ -20,7 +21,7 @@ app.post('/send-email', (req, res) => {
     const { email, otp } = req.body;
 
     const mailOptions = {
-        from: 'detritus408@gmail.com',
+        from: process.env.GMAIL_USER,
         to: email,
         subject: 'Verify Your Email Address for Detritus',
         html: `<p>Hi there,</p>
