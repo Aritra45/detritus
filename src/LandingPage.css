@@ -1,0 +1,215 @@
+
+
+/* Landing page specific styles */
+.landing-page-wrapper {
+  height: 100vh; /* Ensure the landing page wrapper takes full height */
+  overflow: hidden; /* Prevent scrolling on the landing page */
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+/* Navbar */
+.navbar-container {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000000;
+  position: fixed;
+  width: 96.5%;
+  z-index: 1000;
+  top: 0;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Landing Page Layout */
+.landing-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 50px; /* Adjust padding as necessary */
+  color: white;
+  height: 100vh; /* Make sure the page height fits the viewport */
+  padding-top: 10%; /* Adjust padding to account for the navbar */
+  box-sizing: border-box; /* Ensure padding doesn't add to total height */
+}
+
+.content-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.image-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: left;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+span {
+  color: rgb(223, 157, 58);
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #ff7f50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-left: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hero-button:hover {
+  background-color: #ff6347;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+/* Breathing animation for the image */
+.hero-image {
+  width: 50%; /* Adjust the size as needed */
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styling for 600px and below */
+@media (max-width: 600px) {
+  .landing-page {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 50px 20px; /* Adjust padding for mobile */
+    height: 100vh; /* Ensure the landing page takes full height */
+    padding-top: 20%; /* Adjust padding to account for the navbar */
+    overflow-y: scroll;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem; /* Adjust font size for mobile */
+  }
+
+  .hero-section p {
+    font-size: 1rem; /* Adjust paragraph font size for mobile */
+  }
+
+  .hero-button {
+    font-size: 0.9rem; /* Adjust button size for mobile */
+  }
+
+  .image-right {
+    width: 100%; /* Ensure the image takes full width on mobile */
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 70%; /* Adjust the image size on mobile */
+  }
+
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 17px;
+    background-color: #000000;
+    position: fixed;
+    width: 96.5%;
+    z-index: 1000;
+    top: 0;
+  }
+  /* Show the menu icon in mobile view */
+  .menu-icon {
+      display: block; /* Show menu icon on mobile */
+      margin-right: 20px;
+  }
+
+  /* Hide the navigation links in mobile view */
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      right: 30px;
+      background-color: #000;
+      border-radius: 5px;
+      width: 200px;
+      padding: 10px;
+  }
+
+  .nav-links.open {
+      display: flex; /* Show links when menu is open */
+  }
+
+  .nav-links li {
+      padding: 10px 0;
+      border-bottom: 1px solid white;
+  }
+}
+
+/* Hide menu icon and show nav links in larger screen */
+@media (min-width: 769px) {
+  .menu-icon {
+      display: none; /* Hide menu icon in computer view */
+  }
+
+  .nav-links {
+      display: flex; /* Always show links on larger screens */
+  }
+}
