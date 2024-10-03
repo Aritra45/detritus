@@ -32,7 +32,7 @@ const LandingPage = () => {
                     </div>
                     <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
                         <li><a href="/login">Sign In</a></li>
-                        <li><a href="/registration">Sign Up</a></li>
+                        <li><a href="/register">Sign Up</a></li>
                     </ul>
                 </nav>
             </div>
