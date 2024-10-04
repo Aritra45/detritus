@@ -104,5 +104,6 @@ h3 {
         width: 100%; /* Buttons take full width on mobile */
         padding: 8px 0;
         font-size: 0.8em;
+        margin-bottom: 0px; /* Adds space between buttons */
     }
 }
