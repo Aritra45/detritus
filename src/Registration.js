@@ -243,7 +243,7 @@ const Registration = () => {
                         <p>8. Intellectual Property: All content on Detritus is the property of Detritus or its content suppliers. Users may not use any content without written permission.</p>
                         <p>9. Limitation of Liability: Detritus is not liable for any damages arising from the use of the website.</p>
                         <p>10. Changes to Terms: Detritus reserves the right to modify these terms at any time. Users will be notified, and continued use of the site constitutes acceptance.</p>
-                        <p>11. Contact Us: If you have any questions, please contact us at detritus408@gmail.com.</p>
+                        <p>11. Contact Us: If you have any questions, please contact us at <a href="mailto:detritus408@gmail.com">detritus408@gmail.com</a>.</p>
                     </div>
                 </div>
             )}
