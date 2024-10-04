@@ -42,7 +42,7 @@ h3 {
     margin-top: 10px;
 }
 
-.details-button, .interested-button {
+.detail-button, .interested-button {
     padding: 10px 20px;
     font-size: 0.9em;
     border: none;
@@ -52,7 +52,7 @@ h3 {
     text-align: center; /* Centers the button text */
 }
 
-.details-button {
+.detail-button {
     background-color: #007bff;
     color: white;
 }
@@ -99,7 +99,7 @@ h3 {
         flex-direction: column; /* Stack buttons vertically */
     }
 
-    .details-button, .interested-button {
+    .detail-button, .interested-button {
         width: 100%; /* Buttons take full width on mobile */
         padding: 8px 0;
         font-size: 0.8em;
