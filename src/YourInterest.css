@@ -34,8 +34,11 @@ h3 {
     font-size: 1.2em;
     margin: 10px 0;
 }
-.product-action {
-    display: block; /* Ensures buttons stack vertically */
+
+.product-actions {
+    display: flex;
+    justify-content: space-between; /* Ensures even spacing between buttons */
+    gap: 10px; /* Adds space between buttons */
     margin-top: 10px;
 }
 
@@ -45,22 +48,21 @@ h3 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    flex: 1; /* Makes both buttons take up equal space */
+    text-align: center; /* Centers the button text */
 }
 
 .details-button {
     background-color: #007bff;
     color: white;
-    margin-left: 0;
-    width: 100%;
-    
 }
 
 .interested-button {
     background-color: #dc3545;
     color: white;
-    width: 100%;
 }
-.interested-button:hover{
+
+.interested-button:hover {
     background-color: #ad1928;
 }
 
@@ -69,7 +71,7 @@ h3 {
     .interest-page {
         padding: 10px;
     }
-    .interest-page h2{
+    .interest-page h2 {
         padding-top: 15%;
     }
 
@@ -81,7 +83,6 @@ h3 {
 
     .product-card {
         width: 100%; /* Full width card */
-        
     }
 
     .product-image {
@@ -94,18 +95,13 @@ h3 {
         margin: 8px 0;
     }
 
-    .product-action {
+    .product-actions {
         flex-direction: column; /* Stack buttons vertically */
-        gap: 10px;
-        display:flex;
     }
 
     .details-button, .interested-button {
-        width: 100%; /* Buttons take full width */
-        padding: 8px 0; /* Smaller padding */
+        width: 100%; /* Buttons take full width on mobile */
+        padding: 8px 0;
         font-size: 0.8em;
-    }
-    .interested-button {
-        margin-left: 0;
     }
 }
