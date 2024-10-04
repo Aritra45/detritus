@@ -48,7 +48,8 @@ h3 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    flex: 1; /* Makes both buttons take up equal space */
+    width: 100%; /* Buttons take full width */
+    margin-bottom: 10px; /* Adds space between buttons */
     text-align: center; /* Centers the button text */
 }
 
