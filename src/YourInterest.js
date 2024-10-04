@@ -100,7 +100,7 @@ const YourInterest = () => {
 
                                 <div className="product-actions">
                                     <button
-                                        className="details-button"
+                                        className="detail-button"
                                         onClick={() => handleDetailsClick(product)}
                                     >
                                         Details
