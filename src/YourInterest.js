@@ -109,7 +109,7 @@ const YourInterest = () => {
                                         className="interested-button"
                                         onClick={() => handleInterestClick(product)}
                                     >
-                                        Remove Interest
+                                        Remove
                                     </button>
                                 </div>
                             </div>
